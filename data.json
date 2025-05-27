@@ -1,0 +1,41 @@
+{
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "CSPM Executive Dashboard",
+      "widgets": [
+        {
+          "id": "w-1",
+          "title": "Widget 1",
+          "content": "This is some random content for Widget 1"
+        },
+        {
+          "id": "w-2",
+          "title": "Widget 2",
+          "content": "Another example widget with placeholder text"
+        }
+      ]
+    },
+    {
+      "id": "cat-2",
+      "name": "AM Dashboard",
+      "widgets": [
+        {
+          "id": "w-3",
+          "title": "Widget A",
+          "content": "Some content for widget A"
+        },
+        {
+          "id": "w-4",
+          "title": "Widget B",
+          "content": "Details shown inside widget B"
+        },
+        {
+          "id": "w-5",
+          "title": "Widget C",
+          "content": "Details shown inside widget C"
+        }
+      ]
+    }
+  ]
+}

@@ -29,10 +29,10 @@ function Window({ children, name }) {
 
   return createPortal(
     <div className="fixed top-0 right-0 bottom-0 left-0 z-1000 backdrop-blur-sm transition-all">
-      <div className="scrollbar-hide mx-auto mt-20 flex h-auto max-h-[450px] w-[360px] flex-col gap-6 overflow-scroll rounded-xl px-4 py-5 pb-8 shadow-2xl md:mt-10 md:w-[500px] md:px-10 md:py-6 lg:mt-5 lg:max-h-[600px] lg:w-[600px]">
+      <div className="scrollbar-hide mx-auto mt-20 flex h-auto max-h-[450px] w-[360px] flex-col gap-6 overflow-scroll rounded-xl bg-gray-300 px-4 py-5 pb-8 shadow-2xl md:mt-10 md:w-[500px] md:px-10 md:py-6 lg:mt-5 lg:max-h-[600px] lg:w-[600px]">
         <div className="flex items-center justify-end">
           <button onClick={close}>
-            <XMarkIcon className="h-8 w-8" />
+            <XMarkIcon className="h-8 w-8 cursor-pointer" />
           </button>
         </div>
 

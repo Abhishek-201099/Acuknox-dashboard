@@ -1,6 +1,6 @@
 import AddWidgetBtn from "../../ui/AddWidgetBtn";
 import Modal from "../../ui/Modal";
-import AddWidgetForm from "./AddWidgetForm";
+import GlobalAddWidgetForm from "./GlobalAddWidgetForm";
 import Widget from "./Widget";
 
 export default function Category({ category }) {
@@ -10,7 +10,7 @@ export default function Category({ category }) {
 
       <div className="grid grid-cols-3 gap-6">
         {category.widgets.map((widget) => (
-          <Widget key={widget.id} widget={widget} />
+          <Widget key={widget.id} widget={widget} category={category} />
         ))}
         <div className="flex min-h-[200px] items-center justify-center rounded-xl bg-gray-50 p-4">
           <Modal>
@@ -18,7 +18,7 @@ export default function Category({ category }) {
               <AddWidgetBtn />
             </Modal.Open>
             <Modal.Window name="addWidgetForm">
-              <AddWidgetForm />
+              <GlobalAddWidgetForm isGlobal={false} categoryCur={category} />
             </Modal.Window>
           </Modal>
         </div>

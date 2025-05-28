@@ -16,7 +16,7 @@
     width: 20px;
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 2px solid #b7c7d7;
+    border: 2px solid #1b2631;
     border-right-color: transparent;
     animation: rotate 1s infinite linear;
   }
@@ -26,4 +26,15 @@
       transform: rotate(1turn);
     }
   }
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

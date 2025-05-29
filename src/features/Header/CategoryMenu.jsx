@@ -13,6 +13,8 @@ import {
 } from "../Dashboard/dashboardSlice";
 import CategoryItem from "./CategoryItem";
 import AddCategoryForm from "./AddCategoryForm";
+import Overlay from "../../ui/Overlay";
+import CloseBtn from "../../ui/CloseBtn";
 
 export default function CategoryMenu() {
   const dispatch = useDispatch();
@@ -20,8 +22,6 @@ export default function CategoryMenu() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [openAddCat, setOpenAddCat] = useState(false);
   const [uncheckedIds, setUncheckedIds] = useState([]);
-
-  console.log(uncheckedIds);
 
   function handleSave() {
     uncheckedIds.forEach((uncheckedId) =>
@@ -44,10 +44,7 @@ export default function CategoryMenu() {
       </Button>
 
       {isOpenMenu && (
-        <div
-          className="absolute inset-0 z-40 backdrop-blur-xs"
-          onClick={() => setIsOpenMenu((isOpenMenu) => !isOpenMenu)}
-        ></div>
+        <Overlay onClick={() => setIsOpenMenu((isOpenMenu) => !isOpenMenu)} />
       )}
 
       <div
@@ -57,12 +54,9 @@ export default function CategoryMenu() {
           <h2 className="text-xl font-semibold text-gray-500 uppercase [word-spacing:4px]">
             Manage categories
           </h2>
-          <button
-            className="cursor-pointer"
+          <CloseBtn
             onClick={() => setIsOpenMenu((isOpenMenu) => !isOpenMenu)}
-          >
-            <XMarkIcon className="h-8 w-8 text-gray-400" />
-          </button>
+          />
         </div>
 
         <div className="flex flex-col gap-4">

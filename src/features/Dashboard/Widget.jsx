@@ -1,6 +1,7 @@
 import { XMarkIcon } from "@heroicons/react/16/solid";
 import { useDispatch } from "react-redux";
 import { deleteWidgetFromCategory } from "./dashboardSlice";
+import CloseBtn from "../../ui/CloseBtn";
 
 export default function Widget({ widget, category }) {
   const dispatch = useDispatch();
@@ -10,8 +11,7 @@ export default function Widget({ widget, category }) {
       <div className="flex items-center justify-between">
         <h3>{widget.title}</h3>
 
-        <button
-          className="cursor-pointer"
+        <CloseBtn
           onClick={() =>
             dispatch(
               deleteWidgetFromCategory({
@@ -20,9 +20,7 @@ export default function Widget({ widget, category }) {
               }),
             )
           }
-        >
-          <XMarkIcon className="h-6 w-6 text-gray-400" />
-        </button>
+        />
       </div>
       <p>{widget.content}</p>
     </div>

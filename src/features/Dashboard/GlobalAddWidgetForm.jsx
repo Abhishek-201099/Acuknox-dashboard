@@ -45,7 +45,7 @@ export default function GlobalAddWidgetForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-8 bg-gray-200">
       <h3 className="text-xl font-semibold text-gray-500 uppercase">
         {isGlobal ? "Add widget" : categoryCur.name}
       </h3>
@@ -115,7 +115,7 @@ export default function GlobalAddWidgetForm({
 
       <button
         type="submit"
-        className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gray-400 p-2 text-base font-semibold transition-all hover:bg-gray-200"
+        className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gray-300 p-2 text-base font-semibold transition-all hover:bg-gray-400"
       >
         <span>
           <PlusIcon className="h-6 w-6" />

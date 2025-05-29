@@ -33,6 +33,16 @@ const dashboardSlice = createSlice({
         );
       }
     },
+    addNewCategory(state, action) {
+      const { categoryName } = action.payload;
+      state.categories.push({ id: nanoid(), name: categoryName, widgets: [] });
+    },
+    deleteCategory(state, action) {
+      const { categoryId } = action.payload;
+      state.categories = state.categories.filter(
+        (category) => category.id !== categoryId,
+      );
+    },
   },
 });
 
@@ -40,6 +50,8 @@ export const {
   updateDashboardState,
   addWidgetToCategory,
   deleteWidgetFromCategory,
+  addNewCategory,
+  deleteCategory,
 } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

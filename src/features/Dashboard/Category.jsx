@@ -1,7 +1,8 @@
-import AddWidgetBtn from "../../ui/AddWidgetBtn";
+import { PlusIcon } from "@heroicons/react/16/solid";
 import Modal from "../../ui/Modal";
 import GlobalAddWidgetForm from "./GlobalAddWidgetForm";
 import Widget from "./Widget";
+import Button from "../../ui/Button";
 
 export default function Category({ category }) {
   return (
@@ -15,7 +16,9 @@ export default function Category({ category }) {
         <div className="flex min-h-[200px] items-center justify-center rounded-xl bg-gray-50 p-4">
           <Modal>
             <Modal.Open opens="addWidgetForm">
-              <AddWidgetBtn />
+              <Button icon={<PlusIcon className="h-5 w-5" />}>
+                Add widget
+              </Button>
             </Modal.Open>
             <Modal.Window name="addWidgetForm">
               <GlobalAddWidgetForm isGlobal={false} categoryCur={category} />

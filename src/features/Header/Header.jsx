@@ -1,7 +1,8 @@
-import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
-import AddWidgetBtn from "../../ui/AddWidgetBtn";
+import { MagnifyingGlassIcon, PlusIcon } from "@heroicons/react/16/solid";
 import Modal from "../../ui/Modal";
 import GlobalAddWidgetForm from "../Dashboard/GlobalAddWidgetForm";
+import CategoryMenu from "./CategoryMenu";
+import Button from "../../ui/Button";
 
 export default function Header() {
   return (
@@ -16,14 +17,18 @@ export default function Header() {
         <span className="text-base">Search</span>
       </div>
 
-      <Modal>
-        <Modal.Open opens="globalAddWidgetForm">
-          <AddWidgetBtn />
-        </Modal.Open>
-        <Modal.Window name="globalAddWidgetForm">
-          <GlobalAddWidgetForm isGlobal={true} />
-        </Modal.Window>
-      </Modal>
+      <div className="flex items-center gap-4">
+        <Modal>
+          <Modal.Open opens="globalAddWidgetForm">
+            <Button icon={<PlusIcon className="h-5 w-5" />}>Add widget</Button>
+          </Modal.Open>
+          <Modal.Window name="globalAddWidgetForm">
+            <GlobalAddWidgetForm isGlobal={true} />
+          </Modal.Window>
+        </Modal>
+
+        <CategoryMenu />
+      </div>
     </header>
   );
 }

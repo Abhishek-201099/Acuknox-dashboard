@@ -26,7 +26,7 @@ export default function App() {
   );
 
   return (
-    <div className="flex min-h-screen flex-col gap-12 bg-gray-300 p-8">
+    <div className="relative flex min-h-screen flex-col gap-12 overflow-hidden bg-gray-300 p-8">
       <Header />
 
       {isLoading ? <Spinner /> : <Dashboard />}

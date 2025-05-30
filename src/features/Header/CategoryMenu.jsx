@@ -51,7 +51,7 @@ export default function CategoryMenu() {
         className={`absolute top-0 right-0 z-50 flex h-full w-[350px] flex-col gap-4 bg-gray-50 p-2 transition-transform duration-300 sm:w-[400px] md:w-[500px] md:p-4 ${isOpenMenu ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-500 uppercase [word-spacing:4px]">
+          <h2 className="text-xl font-semibold text-indigo-700 uppercase [word-spacing:4px]">
             Manage categories
           </h2>
           <CloseBtn

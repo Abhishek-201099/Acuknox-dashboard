@@ -9,7 +9,7 @@ export default function Category({ category }) {
     <div className="flex flex-col gap-4 p-2">
       <h2 className="text-lg font-semibold text-gray-600">{category.name}</h2>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {category.widgets.map((widget) => (
           <Widget key={widget.id} widget={widget} category={category} />
         ))}

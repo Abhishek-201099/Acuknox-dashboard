@@ -5,6 +5,7 @@ import CategoryMenu from "./CategoryMenu";
 import Button from "../../ui/Button";
 import SearchBtn from "./SearchBtn";
 import Search from "./Search";
+import Menus from "../../ui/Menus";
 
 export default function Header() {
   return (
@@ -16,12 +17,38 @@ export default function Header() {
           <SearchBtn />
         </Modal.Open>
 
-        <div className="flex items-center gap-4">
-          <Modal.Open opens="globalAddWidgetForm">
-            <Button icon={<PlusIcon className="h-5 w-5" />}>Add widget</Button>
-          </Modal.Open>
+        <div className="flex items-center gap-2 md:gap-4">
+          <div className="hidden md:block">
+            <Modal.Open opens="globalAddWidgetForm">
+              <Button icon={<PlusIcon className="h-5 w-5" />}>
+                Add widget
+              </Button>
+            </Modal.Open>
+          </div>
 
           <CategoryMenu />
+
+          <div className="md:hidden">
+            <Menus>
+              <Menus.Toggle id="headerNav" direction="vertical" />
+
+              <Menus.List id="headerNav">
+                <Modal.Open opens="searchForm">
+                  <Menus.Button
+                    icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+                  >
+                    Search
+                  </Menus.Button>
+                </Modal.Open>
+
+                <Modal.Open opens="globalAddWidgetForm">
+                  <Menus.Button icon={<PlusIcon className="h-5 w-5" />}>
+                    Add Widget
+                  </Menus.Button>
+                </Modal.Open>
+              </Menus.List>
+            </Menus>
+          </div>
         </div>
 
         <Modal.Window name="searchForm">

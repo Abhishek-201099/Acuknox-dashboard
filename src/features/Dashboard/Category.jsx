@@ -1,8 +1,9 @@
 import { PlusIcon } from "@heroicons/react/16/solid";
+
 import Modal from "../../ui/Modal";
-import GlobalAddWidgetForm from "./GlobalAddWidgetForm";
-import Widget from "./Widget";
 import Button from "../../ui/Button";
+import Widget from "./Widget";
+import GlobalAddWidgetForm from "./GlobalAddWidgetForm";
 
 export default function Category({ category }) {
   return (

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import Dashboard from "./features/Dashboard/Dashboard";
-import Header from "./features/Header/Header";
 import { useDispatch } from "react-redux";
-import { updateDashboardState } from "./features/Dashboard/dashboardSlice";
+
 import Spinner from "./ui/Spinner";
+import Header from "./features/Header/Header";
+import Dashboard from "./features/Dashboard/Dashboard";
+import { updateDashboardState } from "./features/Dashboard/dashboardSlice";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -13,7 +14,6 @@ export default function App() {
     function () {
       async function fetchData() {
         setIsLoading(true);
-        // await new Promise((resolve) => setTimeout(resolve, 3000));
         const res = await fetch("./data.json");
         const data = await res.json();
         dispatch(updateDashboardState(data.categories));
@@ -26,7 +26,7 @@ export default function App() {
   );
 
   return (
-    <div className="relative flex min-h-screen flex-col gap-12 overflow-hidden bg-indigo-200 p-2 sm:p-4 md:p-8">
+    <div className="relative flex min-h-screen flex-col gap-12 overflow-hidden bg-indigo-100 p-2 sm:p-4 md:p-8">
       <Header />
 
       {isLoading ? <Spinner /> : <Dashboard />}

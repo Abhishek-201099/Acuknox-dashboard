@@ -5,16 +5,17 @@ import {
   XMarkIcon,
 } from "@heroicons/react/16/solid";
 import { useState } from "react";
-import Button from "../../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
+
+import Button from "../../ui/Button";
+import Overlay from "../../ui/Overlay";
+import CloseBtn from "../../ui/CloseBtn";
 import {
   deleteWidgetFromCategory,
   getCategories,
 } from "../Dashboard/dashboardSlice";
 import CategoryItem from "./CategoryItem";
 import AddCategoryForm from "./AddCategoryForm";
-import Overlay from "../../ui/Overlay";
-import CloseBtn from "../../ui/CloseBtn";
 
 export default function CategoryMenu() {
   const dispatch = useDispatch();

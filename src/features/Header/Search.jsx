@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { getCategories } from "../Dashboard/dashboardSlice";
+
 import SearchResults from "./SearchResults";
+import { getCategories } from "../Dashboard/dashboardSlice";
 
 export default function Search() {
   const categories = useSelector(getCategories);
@@ -19,23 +20,17 @@ export default function Search() {
     [query],
   );
 
-  // Check for empty query ---> return empty results array.
-  const filtered = !query.trim()
+  const filtered = !debounceQ.trim()
     ? []
     : categories
         .map((category) => {
-          // matching category name
           const matchedCategory = category.name
             .toLowerCase()
             .includes(debounceQ.toLowerCase());
 
-          // matching widgets
           const matchedWidgets = category.widgets.filter((widget) =>
             widget.title.toLowerCase().includes(debounceQ.toLowerCase()),
           );
-
-          // If any one matches then return the category details + matched/original widgets
-          // or else return null
 
           if (matchedCategory || matchedWidgets.length > 0) {
             return {
@@ -55,7 +50,7 @@ export default function Search() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search anything..."
-        className="rounded-lg border-1 border-gray-200 bg-gray-50 p-3 placeholder:text-gray-300"
+        className="rounded-lg border-2 border-gray-400 bg-gray-50 p-3 placeholder:text-gray-400"
       />
 
       <SearchResults debounceQ={debounceQ} filtered={filtered} />

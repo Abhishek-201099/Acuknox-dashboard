@@ -1,11 +1,12 @@
 import { MagnifyingGlassIcon, PlusIcon } from "@heroicons/react/16/solid";
+
 import Modal from "../../ui/Modal";
-import GlobalAddWidgetForm from "../Dashboard/GlobalAddWidgetForm";
-import CategoryMenu from "./CategoryMenu";
 import Button from "../../ui/Button";
-import SearchBtn from "./SearchBtn";
-import Search from "./Search";
 import Menus from "../../ui/Menus";
+import Search from "./Search";
+import SearchBtn from "./SearchBtn";
+import CategoryMenu from "./CategoryMenu";
+import GlobalAddWidgetForm from "../Dashboard/GlobalAddWidgetForm";
 
 export default function Header() {
   return (

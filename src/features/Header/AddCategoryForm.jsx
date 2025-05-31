@@ -1,6 +1,7 @@
-import { PlusCircleIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { PlusCircleIcon } from "@heroicons/react/16/solid";
+
 import { addNewCategory } from "../Dashboard/dashboardSlice";
 
 export default function AddCategoryForm({ onClose }) {

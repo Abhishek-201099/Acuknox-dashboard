@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addWidgetToCategory, getCategories } from "./dashboardSlice";
 import { useState } from "react";
 import { PlusIcon } from "@heroicons/react/16/solid";
+
+import { addWidgetToCategory, getCategories } from "./dashboardSlice";
 
 export default function GlobalAddWidgetForm({
   isGlobal,
@@ -45,7 +46,7 @@ export default function GlobalAddWidgetForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-8 bg-gray-200">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-8 bg-gray-100">
       <h3 className="text-xl font-semibold text-gray-500 uppercase">
         {isGlobal ? "Add widget" : categoryCur.name}
       </h3>
@@ -62,7 +63,7 @@ export default function GlobalAddWidgetForm({
             id="category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="rounded-lg border-1 border-gray-200 bg-gray-50 p-2 placeholder:text-gray-300"
+            className="rounded-lg border-2 border-gray-200 bg-gray-50 p-2 placeholder:text-gray-300"
           >
             {categories.map((category) => (
               <option key={category.id} value={category.id}>
@@ -86,7 +87,7 @@ export default function GlobalAddWidgetForm({
           placeholder="e.g. Aggregate data"
           value={widgetTitle}
           onChange={(e) => setWidgetTitle(e.target.value)}
-          className="rounded-lg border-1 border-gray-200 bg-gray-50 p-2 placeholder:text-gray-300"
+          className="rounded-lg border-2 border-gray-200 bg-gray-50 p-2 placeholder:text-gray-300"
         />
         {errors.widgetTitle && (
           <p className="text-sm text-red-600">{errors.widgetTitle}</p>
@@ -106,7 +107,7 @@ export default function GlobalAddWidgetForm({
           placeholder="e.g Data calculated as ..."
           value={widgetContent}
           onChange={(e) => setWidgetContent(e.target.value)}
-          className="rounded-lg border-1 border-gray-200 bg-gray-50 p-2 placeholder:text-gray-300"
+          className="rounded-lg border-2 border-gray-200 bg-gray-50 p-2 placeholder:text-gray-300"
         />
         {errors.widgetContent && (
           <p className="text-sm text-red-600">{errors.widgetContent}</p>
@@ -115,7 +116,7 @@ export default function GlobalAddWidgetForm({
 
       <button
         type="submit"
-        className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gray-300 p-2 text-base font-semibold transition-all hover:bg-gray-400"
+        className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-gray-300 p-2 text-base font-semibold transition-all hover:bg-gray-200"
       >
         <span>
           <PlusIcon className="h-6 w-6" />
